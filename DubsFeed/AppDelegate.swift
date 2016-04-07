@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let console = ConsoleDestination()  // log to Xcode Console
     log.addDestination(console)
 
+    
+    let attrs = [
+      NSForegroundColorAttributeName : UIColor(red:0.92, green:0.00, blue:0.25, alpha:1.00),
+      NSFontAttributeName : UIFont(name: "Avenir", size: 20)!
+    ]
+    
+    UINavigationBar.appearance().titleTextAttributes = attrs
+
     return true
   }
 

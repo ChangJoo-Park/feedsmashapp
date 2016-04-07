@@ -46,18 +46,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB65FF051CB6CAFA00162FA8 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AB65FF061CB6CAFA00162FA8 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AB65FF071CB6CAFA00162FA8 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
-		ABA2D2651CB67084003A6AE3 /* DubsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA2D2651CB67084003A6AE3 /* Feedsmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedsmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2D26A1CB67084003A6AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABA2D26D1CB67084003A6AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABA2D26F1CB67084003A6AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2D2721CB67084003A6AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2D2741CB67084003A6AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABA2D2791CB67084003A6AE3 /* DubsFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DubsFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA2D2791CB67084003A6AE3 /* Feedsmash.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feedsmash.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2D27F1CB67085003A6AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABA2D2841CB67085003A6AE3 /* DubsFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DubsFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA2D2841CB67085003A6AE3 /* Feedsmash.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feedsmash.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2D2881CB67085003A6AE3 /* DubsFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubsFeedUITests.swift; sourceTree = "<group>"; };
 		ABA2D28A1CB67085003A6AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABA2D2961CB670AE003A6AE3 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -114,6 +117,9 @@
 		AB65FEFF1CB6B43100162FA8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AB65FF051CB6CAFA00162FA8 /* Lato-Bold.ttf */,
+				AB65FF061CB6CAFA00162FA8 /* Lato-Light.ttf */,
+				AB65FF071CB6CAFA00162FA8 /* Lato-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -144,9 +150,9 @@
 		ABA2D2661CB67084003A6AE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABA2D2651CB67084003A6AE3 /* DubsFeed.app */,
-				ABA2D2791CB67084003A6AE3 /* DubsFeedTests.xctest */,
-				ABA2D2841CB67085003A6AE3 /* DubsFeedUITests.xctest */,
+				ABA2D2651CB67084003A6AE3 /* Feedsmash.app */,
+				ABA2D2791CB67084003A6AE3 /* Feedsmash.xctest */,
+				ABA2D2841CB67085003A6AE3 /* Feedsmash.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ABA2D2641CB67084003A6AE3 /* DubsFeed */ = {
+		ABA2D2641CB67084003A6AE3 /* Feedsmash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABA2D28D1CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeed" */;
+			buildConfigurationList = ABA2D28D1CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "Feedsmash" */;
 			buildPhases = (
 				ABA2D2611CB67084003A6AE3 /* Sources */,
 				ABA2D2621CB67084003A6AE3 /* Frameworks */,
@@ -214,14 +220,14 @@
 			);
 			dependencies = (
 			);
-			name = DubsFeed;
+			name = Feedsmash;
 			productName = DubsFeed;
-			productReference = ABA2D2651CB67084003A6AE3 /* DubsFeed.app */;
+			productReference = ABA2D2651CB67084003A6AE3 /* Feedsmash.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ABA2D2781CB67084003A6AE3 /* DubsFeedTests */ = {
+		ABA2D2781CB67084003A6AE3 /* FeedsmashTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABA2D2901CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedTests" */;
+			buildConfigurationList = ABA2D2901CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "FeedsmashTests" */;
 			buildPhases = (
 				ABA2D2751CB67084003A6AE3 /* Sources */,
 				ABA2D2761CB67084003A6AE3 /* Frameworks */,
@@ -232,14 +238,14 @@
 			dependencies = (
 				ABA2D27B1CB67085003A6AE3 /* PBXTargetDependency */,
 			);
-			name = DubsFeedTests;
+			name = FeedsmashTests;
 			productName = DubsFeedTests;
-			productReference = ABA2D2791CB67084003A6AE3 /* DubsFeedTests.xctest */;
+			productReference = ABA2D2791CB67084003A6AE3 /* Feedsmash.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ABA2D2831CB67085003A6AE3 /* DubsFeedUITests */ = {
+		ABA2D2831CB67085003A6AE3 /* FeedsmashUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABA2D2931CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedUITests" */;
+			buildConfigurationList = ABA2D2931CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "FeedsmashUITests" */;
 			buildPhases = (
 				ABA2D2801CB67085003A6AE3 /* Sources */,
 				ABA2D2811CB67085003A6AE3 /* Frameworks */,
@@ -250,9 +256,9 @@
 			dependencies = (
 				ABA2D2861CB67085003A6AE3 /* PBXTargetDependency */,
 			);
-			name = DubsFeedUITests;
+			name = FeedsmashUITests;
 			productName = DubsFeedUITests;
-			productReference = ABA2D2841CB67085003A6AE3 /* DubsFeedUITests.xctest */;
+			productReference = ABA2D2841CB67085003A6AE3 /* Feedsmash.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +284,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ABA2D2601CB67084003A6AE3 /* Build configuration list for PBXProject "DubsFeed" */;
+			buildConfigurationList = ABA2D2601CB67084003A6AE3 /* Build configuration list for PBXProject "Feedsmash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -291,9 +297,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ABA2D2641CB67084003A6AE3 /* DubsFeed */,
-				ABA2D2781CB67084003A6AE3 /* DubsFeedTests */,
-				ABA2D2831CB67085003A6AE3 /* DubsFeedUITests */,
+				ABA2D2641CB67084003A6AE3 /* Feedsmash */,
+				ABA2D2781CB67084003A6AE3 /* FeedsmashTests */,
+				ABA2D2831CB67085003A6AE3 /* FeedsmashUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -385,12 +391,12 @@
 /* Begin PBXTargetDependency section */
 		ABA2D27B1CB67085003A6AE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ABA2D2641CB67084003A6AE3 /* DubsFeed */;
+			target = ABA2D2641CB67084003A6AE3 /* Feedsmash */;
 			targetProxy = ABA2D27A1CB67085003A6AE3 /* PBXContainerItemProxy */;
 		};
 		ABA2D2861CB67085003A6AE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ABA2D2641CB67084003A6AE3 /* DubsFeed */;
+			target = ABA2D2641CB67084003A6AE3 /* Feedsmash */;
 			targetProxy = ABA2D2851CB67085003A6AE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -509,7 +515,7 @@
 				INFOPLIST_FILE = DubsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feedsmash;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -525,7 +531,7 @@
 				INFOPLIST_FILE = DubsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feedsmash;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -538,9 +544,9 @@
 				INFOPLIST_FILE = DubsFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feedsmash;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DubsFeed.app/DubsFeed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feedsmash.app/Feedsmash";
 			};
 			name = Debug;
 		};
@@ -552,8 +558,8 @@
 				INFOPLIST_FILE = DubsFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DubsFeed.app/DubsFeed";
+				PRODUCT_NAME = Feedsmash;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feedsmash.app/Feedsmash";
 			};
 			name = Release;
 		};
@@ -563,7 +569,7 @@
 				INFOPLIST_FILE = DubsFeedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feedsmash;
 				TEST_TARGET_NAME = DubsFeed;
 			};
 			name = Debug;
@@ -574,7 +580,7 @@
 				INFOPLIST_FILE = DubsFeedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feedsmash;
 				TEST_TARGET_NAME = DubsFeed;
 			};
 			name = Release;
@@ -582,7 +588,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ABA2D2601CB67084003A6AE3 /* Build configuration list for PBXProject "DubsFeed" */ = {
+		ABA2D2601CB67084003A6AE3 /* Build configuration list for PBXProject "Feedsmash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABA2D28B1CB67085003A6AE3 /* Debug */,
@@ -591,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABA2D28D1CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeed" */ = {
+		ABA2D28D1CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "Feedsmash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABA2D28E1CB67085003A6AE3 /* Debug */,
@@ -600,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABA2D2901CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedTests" */ = {
+		ABA2D2901CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "FeedsmashTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABA2D2911CB67085003A6AE3 /* Debug */,
@@ -609,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABA2D2931CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedUITests" */ = {
+		ABA2D2931CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "FeedsmashUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABA2D2941CB67085003A6AE3 /* Debug */,

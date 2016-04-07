@@ -31,7 +31,11 @@
 		<string>armv7</string>
 	</array>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Light.tff</string>
+		<string>Lato-Regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

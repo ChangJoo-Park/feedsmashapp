@@ -27,10 +27,6 @@ class FeedItemCell: UITableViewCell {
       videoTitle.text = feedItem?.snippet?.title
       youtubeView.loadVideoID((feedItem!.id?.videoId)!)
     }
-    
-    willSet {
-      log.info("Will Set")
-    }
   }
   
   @IBAction func actionOpenSheets(sender: UIButton) {
@@ -41,7 +37,6 @@ class FeedItemCell: UITableViewCell {
     let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
     
     let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
-      print("Cancel")
     }
     actionSheetController.addAction(cancelActionButton)
     
