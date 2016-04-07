@@ -1,6 +1,6 @@
 //
-//  DubsFeedUITests.swift
-//  DubsFeedUITests
+//  FeedsmashUITests.swift
+//  FeedsmashUITests
 //
 //  Created by ChangJoo Park on 2016. 4. 7..
 //  Copyright © 2016년 ChangJoo Park. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class DubsFeedUITests: XCTestCase {
+class FeedsmashUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

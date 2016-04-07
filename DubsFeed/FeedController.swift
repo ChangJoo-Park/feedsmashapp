@@ -1,6 +1,6 @@
 //
 //  FeedController.swift
-//  DubsFeed
+//  Feedsmash
 //
 //  Created by ChangJoo Park on 2016. 4. 7..
 //  Copyright © 2016년 ChangJoo Park. All rights reserved.
@@ -14,7 +14,7 @@ import SwiftyJSON
 class FeedController: NSObject {
   private let API_KEY = "AIzaSyB3cRg5vQZfIvNiFBLheydDiu6hWlOUcig"
   let query: String = "dubsmash"
-  let maxResults: Int = 5
+  let maxResults: Int = 30
   var feedItems: [FeedItem]?
   
   func parseRowToItem(item: JSON) -> FeedItem {

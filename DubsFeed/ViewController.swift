@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  DubsFeed
+//  Feedsmash
 //
 //  Created by ChangJoo Park on 2016. 4. 7..
 //  Copyright © 2016년 ChangJoo Park. All rights reserved.
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     if refreshControl.refreshing {
       updateFeedItems()
-      // TODO: Add Animating label      
+      // TODO: Add Animating label
     }
   }
   override func didReceiveMemoryWarning() {

@@ -18,7 +18,6 @@
 		ABA2D2971CB670AE003A6AE3 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2961CB670AE003A6AE3 /* FeedItem.swift */; };
 		ABA2D2991CB670C6003A6AE3 /* FeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2981CB670C6003A6AE3 /* FeedItemTests.swift */; };
 		ABA2D29B1CB670D6003A6AE3 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */; };
-		ABA2D29D1CB670F9003A6AE3 /* FeedControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D29C1CB670F9003A6AE3 /* FeedControllerTests.swift */; };
 		ABA2D2A01CB677A3003A6AE3 /* FeedId.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D29F1CB677A3003A6AE3 /* FeedId.swift */; };
 		ABA2D2A21CB677E4003A6AE3 /* FeedSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2A11CB677E4003A6AE3 /* FeedSnippet.swift */; };
 		ABA2D2A41CB6783E003A6AE3 /* FeedThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2A31CB6783E003A6AE3 /* FeedThumbnail.swift */; };
@@ -64,7 +63,6 @@
 		ABA2D2961CB670AE003A6AE3 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		ABA2D2981CB670C6003A6AE3 /* FeedItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemTests.swift; sourceTree = "<group>"; };
 		ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		ABA2D29C1CB670F9003A6AE3 /* FeedControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedControllerTests.swift; sourceTree = "<group>"; };
 		ABA2D29F1CB677A3003A6AE3 /* FeedId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedId.swift; sourceTree = "<group>"; };
 		ABA2D2A11CB677E4003A6AE3 /* FeedSnippet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSnippet.swift; sourceTree = "<group>"; };
 		ABA2D2A31CB6783E003A6AE3 /* FeedThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedThumbnail.swift; sourceTree = "<group>"; };
@@ -105,22 +103,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ABA239D41CB69F740079E8BE /* YoutubeTableView */ = {
+		ABA239D41CB69F740079E8BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABA2D26A1CB67084003A6AE3 /* ViewController.swift */,
 				ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */,
 			);
-			name = YoutubeTableView;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		ABA2D25C1CB67084003A6AE3 = {
 			isa = PBXGroup;
 			children = (
-				ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */,
-				ABA2D2AD1CB6811E003A6AE3 /* SwiftyBeaver.framework */,
-				ABA2D2A51CB67E47003A6AE3 /* Alamofire.framework */,
-				ABA2D2A61CB67E47003A6AE3 /* AlamofireImage.framework */,
-				ABA2D2A71CB67E47003A6AE3 /* SwiftyJSON.framework */,
+				ABF950CF1CB6E51E006FDF09 /* Library */,
 				ABA2D2671CB67084003A6AE3 /* DubsFeed */,
 				ABA2D27C1CB67085003A6AE3 /* DubsFeedTests */,
 				ABA2D2871CB67085003A6AE3 /* DubsFeedUITests */,
@@ -141,15 +136,12 @@
 		ABA2D2671CB67084003A6AE3 /* DubsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				ABA239D41CB69F740079E8BE /* YoutubeTableView */,
-				ABA2D29E1CB6777F003A6AE3 /* YoutubeFeedItem */,
+				ABF950D11CB6E548006FDF09 /* UI */,
+				ABF950D01CB6E53C006FDF09 /* Controllers */,
+				ABA239D41CB69F740079E8BE /* Views */,
+				ABA2D29E1CB6777F003A6AE3 /* Models */,
 				ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */,
-				ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */,
-				ABA2D26A1CB67084003A6AE3 /* ViewController.swift */,
-				ABA2D26C1CB67084003A6AE3 /* Main.storyboard */,
-				ABF950CD1CB6D563006FDF09 /* RefreshControl.xib */,
 				ABA2D26F1CB67084003A6AE3 /* Assets.xcassets */,
-				ABA2D2711CB67084003A6AE3 /* LaunchScreen.storyboard */,
 				ABA2D2741CB67084003A6AE3 /* Info.plist */,
 			);
 			path = DubsFeed;
@@ -160,7 +152,6 @@
 			children = (
 				ABA2D27F1CB67085003A6AE3 /* Info.plist */,
 				ABA2D2981CB670C6003A6AE3 /* FeedItemTests.swift */,
-				ABA2D29C1CB670F9003A6AE3 /* FeedControllerTests.swift */,
 			);
 			path = DubsFeedTests;
 			sourceTree = "<group>";
@@ -174,7 +165,7 @@
 			path = DubsFeedUITests;
 			sourceTree = "<group>";
 		};
-		ABA2D29E1CB6777F003A6AE3 /* YoutubeFeedItem */ = {
+		ABA2D29E1CB6777F003A6AE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ABA2D2961CB670AE003A6AE3 /* FeedItem.swift */,
@@ -182,7 +173,37 @@
 				ABA2D2A11CB677E4003A6AE3 /* FeedSnippet.swift */,
 				ABA2D2A31CB6783E003A6AE3 /* FeedThumbnail.swift */,
 			);
-			name = YoutubeFeedItem;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		ABF950CF1CB6E51E006FDF09 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */,
+				ABA2D2AD1CB6811E003A6AE3 /* SwiftyBeaver.framework */,
+				ABA2D2A51CB67E47003A6AE3 /* Alamofire.framework */,
+				ABA2D2A61CB67E47003A6AE3 /* AlamofireImage.framework */,
+				ABA2D2A71CB67E47003A6AE3 /* SwiftyJSON.framework */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		ABF950D01CB6E53C006FDF09 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ABF950D11CB6E548006FDF09 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ABA2D2711CB67084003A6AE3 /* LaunchScreen.storyboard */,
+				ABA2D26C1CB67084003A6AE3 /* Main.storyboard */,
+				ABF950CD1CB6D563006FDF09 /* RefreshControl.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA2D2991CB670C6003A6AE3 /* FeedItemTests.swift in Sources */,
-				ABA2D29D1CB670F9003A6AE3 /* FeedControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

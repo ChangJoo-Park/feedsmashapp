@@ -1,6 +1,6 @@
 //
 //  FeedItem.swift
-//  DubsFeed
+//  Feedsmash
 //
 //  Created by ChangJoo Park on 2016. 4. 7..
 //  Copyright © 2016년 ChangJoo Park. All rights reserved.
