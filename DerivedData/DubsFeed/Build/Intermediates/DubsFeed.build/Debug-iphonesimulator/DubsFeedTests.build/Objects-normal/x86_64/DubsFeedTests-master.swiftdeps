@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "6a74715d9bd0c253bffbb1a312546981"
+build_time: [513340999, 860386000]
+inputs:
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeedTests/FeedItemTests.swift": [513340870, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeedTests/FeedControllerTests.swift": [513340993, 0]

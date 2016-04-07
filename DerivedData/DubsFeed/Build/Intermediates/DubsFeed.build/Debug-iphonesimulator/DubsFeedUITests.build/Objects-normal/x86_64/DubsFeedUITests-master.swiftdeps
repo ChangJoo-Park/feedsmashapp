@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "96a3a2c11046d00a6cdb61c638eb4313"
+build_time: [513341001, 912512000]
+inputs:
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeedUITests/DubsFeedUITests.swift": [513340805, 0]
