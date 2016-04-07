@@ -33,14 +33,6 @@ class FeedItemCell: UITableViewCell {
     }
   }
   
-  @IBAction func actionDubSmash(sender: UIButton) {
-    let url = NSURL(string: "dubsmash://")
-//    let url = NSURL(string: "https://itunes.apple.com/app/dubsmash/id918820076")
-    if UIApplication.sharedApplication().canOpenURL(url!) {
-      UIApplication.sharedApplication().openURL(url!)
-    }
-  }
-  
   @IBAction func actionOpenSheets(sender: UIButton) {
     guard let unwrapedViewController = self.parentViewController else  {
       return
@@ -53,11 +45,14 @@ class FeedItemCell: UITableViewCell {
     }
     actionSheetController.addAction(cancelActionButton)
     
-//    let saveActionButton: UIAlertAction = UIAlertAction(title: "Save to Camera Roll", style: .Default)
-//    { action -> Void in
-//      print("Save to Camera Roll")
-//    }
-//    actionSheetController.addAction(saveActionButton)
+    let dubsmashActionButton: UIAlertAction = UIAlertAction(title: "Dubsmash on AppStore", style: .Default)
+    { action -> Void in
+      let url = NSURL(string: "https://itunes.apple.com/app/dubsmash/id918820076")
+      if UIApplication.sharedApplication().canOpenURL(url!) {
+        UIApplication.sharedApplication().openURL(url!)
+      }
+    }
+    actionSheetController.addAction(dubsmashActionButton)
     
     let youtubeActionButton: UIAlertAction = UIAlertAction(title: "Open in Youtube", style: .Default)
     { action -> Void in
