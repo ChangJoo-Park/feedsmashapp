@@ -1,8 +1,11 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
-options: "032506867c278ffff12c9abaf96810ef"
-build_time: [513340922, 51650000]
+options: "379fc1b7491fd3c5fbd01d7dc3a3535c"
+build_time: [513350173, 534343000]
 inputs:
-  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/ViewController.swift": [513340804, 0]
-  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/AppDelegate.swift": [513340804, 0]
-  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedItem.swift": [513340853, 0]
-  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedController.swift": [513340906, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedId.swift": [513349635, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedThumbnail.swift": [513349642, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/ViewController.swift": [513350129, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/AppDelegate.swift": [513345087, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedItem.swift": [513349632, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedController.swift": [513350169, 0]
+  "/Users/ChangJooPark/Development/iOS/iOS Tutorials/DubsFeed/DubsFeed/FeedSnippet.swift": [513349807, 0]

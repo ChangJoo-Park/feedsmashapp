@@ -25,4 +25,9 @@ class FeedControllerTests: XCTestCase {
   func testShouldFeedControllerExists() {
     XCTAssertNotNil(feedController)
   }
+  
+  func testShouldQueryBeDubSmash() {
+    XCTAssertNotNil(feedController.query)
+    XCTAssertEqual(feedController.query,"dubsmash")
+  }
 }

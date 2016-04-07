@@ -114,16 +114,55 @@ SWIFT_CLASS("_TtC8DubsFeed11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class FeedItem;
+@class NSError;
 
 SWIFT_CLASS("_TtC8DubsFeed14FeedController")
 @interface FeedController : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull query;
+@property (nonatomic, readonly) NSInteger maxResults;
+@property (nonatomic, copy) NSArray<FeedItem *> * _Nullable feedItems;
+- (void)requestDubsmashes:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+SWIFT_CLASS("_TtC8DubsFeed6FeedId")
+@interface FeedId : NSObject
+@property (nonatomic, copy) NSString * _Nullable kind;
+@property (nonatomic, copy) NSString * _Nullable videoId;
+- (NSString * _Nonnull)toString;
+@end
+
+@class FeedSnippet;
+
 SWIFT_CLASS("_TtC8DubsFeed8FeedItem")
 @interface FeedItem : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable kind;
+@property (nonatomic, copy) NSString * _Nullable etag;
+@property (nonatomic, strong) FeedId * _Nullable id;
+@property (nonatomic, strong) FeedSnippet * _Nullable snippet;
+- (NSString * _Nonnull)toString;
+@end
+
+@class FeedThumbnail;
+
+SWIFT_CLASS("_TtC8DubsFeed11FeedSnippet")
+@interface FeedSnippet : NSObject
+@property (nonatomic, copy) NSString * _Nullable publishedAt;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+@property (nonatomic, copy) NSArray<FeedThumbnail *> * _Nullable thumbnails;
+@property (nonatomic, copy) NSString * _Nullable channelTitle;
+@property (nonatomic, copy) NSString * _Nullable channelId;
+@property (nonatomic, copy) NSString * _Nullable liveBroadcastContent;
+- (NSString * _Nonnull)toString;
+@end
+
+
+SWIFT_CLASS("_TtC8DubsFeed13FeedThumbnail")
+@interface FeedThumbnail : NSObject
+- (NSString * _Nonnull)toString;
 @end
 
 @class NSBundle;
@@ -131,6 +170,7 @@ SWIFT_CLASS("_TtC8DubsFeed8FeedItem")
 
 SWIFT_CLASS("_TtC8DubsFeed14ViewController")
 @interface ViewController : UIViewController
+@property (nonatomic, strong) FeedController * _Nullable feedController;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
