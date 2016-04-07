@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABA239D31CB69EC60079E8BE /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */; };
+		ABA239D61CB69FC60079E8BE /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */; };
 		ABA2D2691CB67084003A6AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */; };
 		ABA2D26B1CB67084003A6AE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D26A1CB67084003A6AE3 /* ViewController.swift */; };
 		ABA2D26E1CB67084003A6AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2D26C1CB67084003A6AE3 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
+		ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
 		ABA2D2651CB67084003A6AE3 /* DubsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2D26A1CB67084003A6AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				ABA2D2A91CB67E47003A6AE3 /* AlamofireImage.framework in Frameworks */,
 				ABA2D2AE1CB6811E003A6AE3 /* SwiftyBeaver.framework in Frameworks */,
 				ABA2D2AA1CB67E47003A6AE3 /* SwiftyJSON.framework in Frameworks */,
+				ABA239D31CB69EC60079E8BE /* YouTubePlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +103,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB65FEFE1CB6B42D00162FA8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB65FEFF1CB6B43100162FA8 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB65FEFF1CB6B43100162FA8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		ABA239D41CB69F740079E8BE /* YoutubeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */,
+			);
+			name = YoutubeTableView;
+			sourceTree = "<group>";
+		};
 		ABA2D25C1CB67084003A6AE3 = {
 			isa = PBXGroup;
 			children = (
+				ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */,
 				ABA2D2AD1CB6811E003A6AE3 /* SwiftyBeaver.framework */,
 				ABA2D2A51CB67E47003A6AE3 /* Alamofire.framework */,
 				ABA2D2A61CB67E47003A6AE3 /* AlamofireImage.framework */,
@@ -125,6 +154,8 @@
 		ABA2D2671CB67084003A6AE3 /* DubsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				AB65FEFE1CB6B42D00162FA8 /* Resources */,
+				ABA239D41CB69F740079E8BE /* YoutubeTableView */,
 				ABA2D29E1CB6777F003A6AE3 /* YoutubeFeedItem */,
 				ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */,
 				ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */,
@@ -305,6 +336,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -320,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA239D61CB69FC60079E8BE /* FeedItemCell.swift in Sources */,
 				ABA2D2A01CB677A3003A6AE3 /* FeedId.swift in Sources */,
 				ABA2D2A41CB6783E003A6AE3 /* FeedThumbnail.swift in Sources */,
 				ABA2D26B1CB67084003A6AE3 /* ViewController.swift in Sources */,
@@ -565,6 +598,7 @@
 				ABA2D28F1CB67085003A6AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABA2D2901CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +607,7 @@
 				ABA2D2921CB67085003A6AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABA2D2931CB67085003A6AE3 /* Build configuration list for PBXNativeTarget "DubsFeedUITests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +616,7 @@
 				ABA2D2951CB67085003A6AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

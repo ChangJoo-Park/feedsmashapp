@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
   var feedController: FeedController?
+  var feedItems: [FeedItem]?
+  
+  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     feedController = FeedController()
+    updateFeedItems()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  func updateFeedItems() {
     guard let feedCtrl = feedController else {
       return
     }
@@ -24,14 +36,45 @@ class ViewController: UIViewController {
         return
       }
       // Load Data
+      guard let items = feedCtrl.feedItems else {
+        log.error("item is nil")
+        return
+      }
+      
+      self.feedItems = items
+      self.tableView.reloadData()
+      
     }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
+extension ViewController: UITableViewDelegate {
+  
+}
+
+extension ViewController: UITableViewDataSource {
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 400
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    guard let unwrappedFeedItems = feedItems else {
+      return 0
+    }
+    
+    return unwrappedFeedItems.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell: FeedItemCell = tableView.dequeueReusableCellWithIdentifier("FeedItemCell", forIndexPath: indexPath) as! FeedItemCell
+    
+    guard let unwrappedfeedItems = feedItems else {
+      return cell
+    }
+    
+    cell.feedItem = unwrappedfeedItems[indexPath.row] as FeedItem
+    cell.parentViewController = self
+    return cell
+  }  
+}

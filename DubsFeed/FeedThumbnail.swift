@@ -20,6 +20,7 @@ enum THUMBNAIL_TYPE {
 
 class FeedThumbnail: NSObject {
   var type: THUMBNAIL_TYPE?
+  var url: NSURL?
   var width: Int?
   var height: Int?
   
@@ -35,7 +36,8 @@ class FeedThumbnail: NSObject {
     default:
       self.type = THUMBNAIL_TYPE.Default
     }
-    
+    let urlString = data["url"].rawString()
+    self.url = NSURL(string: urlString!)
     self.width = data["width"].int
     self.height = data["height"].int
   }

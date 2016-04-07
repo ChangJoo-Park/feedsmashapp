@@ -22,7 +22,7 @@ class FeedController: NSObject {
   }
   
   func requestDubsmashes(completionHandler: (NSError?) -> Void){
-    let url = NSURL(string: "https://www.googleapis.com/youtube/v3/search?part=snippet&fields=items&order=viewCount&q=\(query)&type=video&maxResults=\(maxResults)&key=\(API_KEY)")
+    let url = NSURL(string: "https://www.googleapis.com/youtube/v3/search?part=snippet&fields=items&order=date&q=\(query)&type=video&maxResults=\(maxResults)&key=\(API_KEY)")
     
     Alamofire.request(.GET, url!).validate().responseJSON { response in
       switch response.result {

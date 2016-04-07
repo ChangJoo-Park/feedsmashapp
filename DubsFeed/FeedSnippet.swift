@@ -39,7 +39,6 @@ class FeedSnippet: NSObject {
     for (type, detail):(String, JSON) in unwrappedThumbnails {
       let thumbnail = FeedThumbnail(type: type, data: detail)
       self.thumbnails?.append(thumbnail)
-      log.info(thumbnail.toString())
     }
   }
   

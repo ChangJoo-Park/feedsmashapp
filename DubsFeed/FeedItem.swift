@@ -18,7 +18,6 @@ class FeedItem: NSObject {
   
   required init(data: JSON) {
     super.init()
-    log.info("Start Init Data")
     self.id = FeedId(data: data["id"])
     self.snippet = FeedSnippet(data: data["snippet"])
     self.kind = data["kind"].rawString()
