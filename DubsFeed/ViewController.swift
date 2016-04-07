@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
   var feedController: FeedController?
   var feedItems: [FeedItem]?
+
+
+  var refreshControl: UIRefreshControl!
+  var customView: UIView!
+  var labelsArray: Array<UILabel> = []
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -18,10 +23,31 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
 
+    // Initialize refresh control
+    refreshControl = UIRefreshControl()
+    refreshControl.backgroundColor = UIColor.clearColor()
+    refreshControl.tintColor = UIColor.clearColor()
+
+    tableView.addSubview(refreshControl)
+    loadCustomRefreshContents()
+    
     feedController = FeedController()
     updateFeedItems()
   }
   
+  func loadCustomRefreshContents() {
+    let refreshContents = NSBundle.mainBundle().loadNibNamed("RefreshControl", owner: self, options: nil)
+    customView = refreshContents[0] as! UIView
+    customView.frame = refreshControl.bounds
+    refreshControl.addSubview(customView)
+  }
+  
+  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    if refreshControl.refreshing {
+      updateFeedItems()
+      // TODO: Add Animating label      
+    }
+  }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -41,10 +67,9 @@ class ViewController: UIViewController {
         log.error("item is nil")
         return
       }
-      
       self.feedItems = items
       self.tableView.reloadData()
-      
+      self.refreshControl.endRefreshing()
     }
   }
 }

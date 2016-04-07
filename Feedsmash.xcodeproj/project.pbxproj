@@ -26,6 +26,7 @@
 		ABA2D2A91CB67E47003A6AE3 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA2D2A61CB67E47003A6AE3 /* AlamofireImage.framework */; };
 		ABA2D2AA1CB67E47003A6AE3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA2D2A71CB67E47003A6AE3 /* SwiftyJSON.framework */; };
 		ABA2D2AE1CB6811E003A6AE3 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA2D2AD1CB6811E003A6AE3 /* SwiftyBeaver.framework */; };
+		ABF950CE1CB6D563006FDF09 /* RefreshControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF950CD1CB6D563006FDF09 /* RefreshControl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB65FF051CB6CAFA00162FA8 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
-		AB65FF061CB6CAFA00162FA8 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		AB65FF071CB6CAFA00162FA8 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
 		ABA2D2651CB67084003A6AE3 /* Feedsmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedsmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +72,7 @@
 		ABA2D2A61CB67E47003A6AE3 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		ABA2D2A71CB67E47003A6AE3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		ABA2D2AD1CB6811E003A6AE3 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		ABF950CD1CB6D563006FDF09 /* RefreshControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshControl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,24 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB65FEFE1CB6B42D00162FA8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				AB65FEFF1CB6B43100162FA8 /* Fonts */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		AB65FEFF1CB6B43100162FA8 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				AB65FF051CB6CAFA00162FA8 /* Lato-Bold.ttf */,
-				AB65FF061CB6CAFA00162FA8 /* Lato-Light.ttf */,
-				AB65FF071CB6CAFA00162FA8 /* Lato-Regular.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		ABA239D41CB69F740079E8BE /* YoutubeTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,13 +141,13 @@
 		ABA2D2671CB67084003A6AE3 /* DubsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				AB65FEFE1CB6B42D00162FA8 /* Resources */,
 				ABA239D41CB69F740079E8BE /* YoutubeTableView */,
 				ABA2D29E1CB6777F003A6AE3 /* YoutubeFeedItem */,
 				ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */,
 				ABA2D29A1CB670D6003A6AE3 /* FeedController.swift */,
 				ABA2D26A1CB67084003A6AE3 /* ViewController.swift */,
 				ABA2D26C1CB67084003A6AE3 /* Main.storyboard */,
+				ABF950CD1CB6D563006FDF09 /* RefreshControl.xib */,
 				ABA2D26F1CB67084003A6AE3 /* Assets.xcassets */,
 				ABA2D2711CB67084003A6AE3 /* LaunchScreen.storyboard */,
 				ABA2D2741CB67084003A6AE3 /* Info.plist */,
@@ -273,6 +254,7 @@
 				TargetAttributes = {
 					ABA2D2641CB67084003A6AE3 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 663SM38D42;
 					};
 					ABA2D2781CB67084003A6AE3 = {
 						CreatedOnToolsVersion = 7.3;
@@ -312,6 +294,7 @@
 				ABA2D2731CB67084003A6AE3 /* LaunchScreen.storyboard in Resources */,
 				ABA2D2701CB67084003A6AE3 /* Assets.xcassets in Resources */,
 				ABA2D26E1CB67084003A6AE3 /* Main.storyboard in Resources */,
+				ABF950CE1CB6D563006FDF09 /* RefreshControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,13 +491,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DubsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = feedsmash;
 				PRODUCT_NAME = Feedsmash;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -524,13 +508,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DubsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.changjoo.me.DubsFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = feedsmash;
 				PRODUCT_NAME = Feedsmash;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
