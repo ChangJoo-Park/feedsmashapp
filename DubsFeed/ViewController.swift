@@ -51,8 +51,29 @@ class ViewController: UIViewController {
     guard let unwrappedCell = playStateCell else {
       return
     }
+    
+    let isScrollAway = checkCellIsScrollAway(unwrappedCell)
+    
+    if isScrollAway {
+      unwrappedCell.stopVideo()
+    }
   }
   
+  private func checkCellIsScrollAway(cell: FeedItemCell) -> Bool {
+    let indexPath = tableView.indexPathForCell(cell)
+    let cellRectInTable = tableView.rectForRowAtIndexPath(indexPath!)
+    let cellInSuperview = tableView.convertRect(cellRectInTable, toView: tableView.superview)
+    let cellPositionY = cellInSuperview.origin.y
+
+    // swipe up (View will down, y less than 0)
+    if cellPositionY < -100 {
+      return true
+    // swipe down (View will up, y less than 0)
+    } else if cellPositionY - cellInSuperview.height > 100 {
+      return true
+    }
+    return false
+  }
   
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     if refreshControl.refreshing {
