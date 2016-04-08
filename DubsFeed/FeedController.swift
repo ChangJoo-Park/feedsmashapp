@@ -14,7 +14,7 @@ import SwiftyJSON
 class FeedController: NSObject {
   private let apiKey = ""
   let query: String = "dubsmash"
-  let maxResults: Int = 5
+  let maxResults: Int = 20
   var feedItems: [FeedItem]?
   var nextToken: String?
 
@@ -26,11 +26,8 @@ class FeedController: NSObject {
     let baseUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&"
     let searchOption = "order=date&"
     let queryString = "q=\(query)&type=video&maxResults=\(maxResults)&key=\(apiKey)"
-    log.debug("Check before nextToken")
     let nextTokenString =  nextToken == nil ? "" : "&pageToken=\(nextToken as String!)"
-    log.debug(nextTokenString)
     let urlString = "\(baseUrl)\(searchOption)\(queryString)\(nextTokenString)"
-    log.info(urlString)
     let url = NSURL(string: urlString)
 
     Alamofire.request(.GET, url!).validate().responseJSON { response in

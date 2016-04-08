@@ -91,8 +91,6 @@ class ViewController: UIViewController {
     let triggerY = scrollView.contentSize.height - tableView.frame.size.height
     if (offSetY >= triggerY) {
       if !isLoadingState {
-        // The offset of elements should be the amount you currently have, and you want to fetch 5 more elements
-        log.debug("Time to get more")
         updateFeedItems(FeedUpdateType.LOADMORE)
       }
     }
@@ -106,7 +104,6 @@ class ViewController: UIViewController {
 
   func updateFeedItems(feedUpdateType: FeedUpdateType) {
     guard let feedCtrl = feedController else {
-      log.debug("is false")
       return
     }
 
