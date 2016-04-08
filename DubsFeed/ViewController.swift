@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     let refreshContents =
       NSBundle.mainBundle().loadNibNamed("RefreshControl", owner: self, options: nil)
 
-
     customView = refreshContents.first as! UIView
     customView.frame = refreshControl.bounds
     customView.subviews.first!.layer.opacity = 0.0
@@ -95,6 +94,12 @@ class ViewController: UIViewController {
 
     feedCtrl.requestDubsmashes { (error) in
       if error != nil {
+        log.error("Please check internet connection")
+        let alertMessage = UIAlertController(
+          title: "Check Connection", message: "Sorry, Please check Wifi or Cellular.",
+          preferredStyle: .Alert)
+        alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alertMessage, animated: true, completion: nil)
         return
       }
       // Load Data

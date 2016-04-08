@@ -22,6 +22,7 @@ class FeedController: NSObject {
   }
 
   func requestDubsmashes(completionHandler: (NSError?) -> Void) {
+    log.info("START REQUEST")
     let baseUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&"
     let searchOption = "fields=items&order=date&"
     let queryString = "q=\(query)&type=video&maxResults=\(maxResults)&key=\(apiKey)"
@@ -42,9 +43,13 @@ class FeedController: NSObject {
           }
           completionHandler(nil)
         }
+        break
       case .Failure(let error):
+        log.error("Not connected")
         completionHandler(error)
+        break
       }
+
     }
 
   }
