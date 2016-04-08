@@ -19,10 +19,6 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  
-  // Play State
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -31,7 +27,6 @@ class ViewController: UIViewController {
     refreshControl = UIRefreshControl()
     refreshControl.backgroundColor = UIColor.clearColor()
     refreshControl.tintColor = UIColor.clearColor()
-    
     tableView.addSubview(refreshControl)
     loadCustomRefreshContents()
     
@@ -43,15 +38,23 @@ class ViewController: UIViewController {
     let refreshContents = NSBundle.mainBundle().loadNibNamed("RefreshControl", owner: self, options: nil)
     customView = refreshContents[0] as! UIView
     customView.frame = refreshControl.bounds
-    log.info(customView.subviews[0].subviews.count)
+    customView.subviews[0].layer.opacity = 0.0
     refreshControl.addSubview(customView)
   }
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
+    log.debug(customView.frame.height)
+    
+    if customView.frame.height < 30 {
+      customView.subviews[0].layer.opacity = 0.0
+    } else {
+      customView.subviews[0].layer.opacity = 1.0
+    }
+    
     guard let unwrappedCell = playStateCell else {
       return
     }
-    
+
     let isScrollAway = checkCellIsScrollAway(unwrappedCell)
     
     if isScrollAway {
