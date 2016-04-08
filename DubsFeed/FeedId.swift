@@ -12,13 +12,13 @@ import SwiftyJSON
 class FeedId: NSObject {
   var kind: String?
   var videoId: String?
-  
+
   required init(data: JSON) {
     super.init()
     self.kind = data["kind"].rawString()
     self.videoId = data["videoId"].rawString()
   }
-  
+
   func toString() -> String {
     return "[kind=[\(kind)],\n videoId=[\(videoId)] ]"
   }

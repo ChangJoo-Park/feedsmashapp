@@ -17,8 +17,8 @@ class FeedSnippet: NSObject {
   var channelTitle: String?
   var channelId: String?
   var liveBroadcastContent: String?
-  
-  
+
+
   required init(data: JSON) {
     super.init()
     self.publishedAt = data["publishedAt"].rawString()
@@ -27,24 +27,23 @@ class FeedSnippet: NSObject {
     self.desc = data["description"].rawString()
     self.channelTitle = data["channelTitle"].rawString()
     self.liveBroadcastContent = data["liveBroadcastContent"].rawString()
-    
-    
+
+
     self.thumbnails = []
-    
+
     guard let unwrappedThumbnails: JSON = data["thumbnails"] else {
       log.info("Thumbnails is nil")
       return
     }
-    
+
     for (type, detail):(String, JSON) in unwrappedThumbnails {
       let thumbnail = FeedThumbnail(type: type, data: detail)
       self.thumbnails?.append(thumbnail)
     }
   }
-  
-  
+
+
   func toString() -> String {
-    
     return "publishedAt: [\(publishedAt)], title: [\(title)], description: [\(desc)], thumbnails: [\(thumbnails?.count)], channelId: [\(channelId)], channelTitle: [\(channelTitle)], liveBroadcastContent: [\(liveBroadcastContent)]"
   }
 }

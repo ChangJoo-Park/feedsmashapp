@@ -9,40 +9,37 @@
 import Foundation
 import SwiftyJSON
 
-enum THUMBNAIL_TYPE {
+enum ThumbnailType {
   case Default
   case Medium
   case High
 }
 
-
-
-
 class FeedThumbnail: NSObject {
-  var type: THUMBNAIL_TYPE?
+  var type: ThumbnailType?
   var url: NSURL?
   var width: Int?
   var height: Int?
-  
+
   required init(type: String, data: JSON) {
     super.init()
     switch type {
     case "default":
-      self.type = THUMBNAIL_TYPE.Default
+      self.type = ThumbnailType.Default
     case "medium":
-      self.type = THUMBNAIL_TYPE.Medium
+      self.type = ThumbnailType.Medium
     case "high":
-      self.type = THUMBNAIL_TYPE.High
+      self.type = ThumbnailType.High
     default:
-      self.type = THUMBNAIL_TYPE.Default
+      self.type = ThumbnailType.Default
     }
     let urlString = data["url"].rawString()
     self.url = NSURL(string: urlString!)
     self.width = data["width"].int
     self.height = data["height"].int
   }
-  
-  func toString() -> String{
+
+  func toString() -> String {
     return "\(self.type), width=[\(width)], height=[\(height)]"
   }
 }

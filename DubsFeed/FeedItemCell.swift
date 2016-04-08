@@ -12,17 +12,15 @@ import AlamofireImage
 import YouTubePlayer
 
 class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
-  
+
   @IBOutlet weak var videoTitle: UILabel!
   @IBOutlet weak var youtubeView: YouTubePlayerView!
   @IBOutlet weak var desc: UILabel!
   @IBOutlet weak var dubSmashButton: UIButton!
   @IBOutlet weak var moreButton: UIButton!
-  
-  
-  var parentViewController: ViewController?
+
   var delegate: FeedItemCellDelegate?
-  
+
   var feedItem: FeedItem? {
     didSet {
       desc.text = feedItem?.snippet?.desc
@@ -35,11 +33,11 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
       youtubeView.loadVideoID((feedItem!.id?.videoId)!)
     }
   }
-  
+
   override func awakeFromNib() {
     youtubeView.delegate = self
   }
-  
+
   func playVideo() {
     if youtubeView.ready {
       if youtubeView.playerState != YouTubePlayerState.Playing {
@@ -47,56 +45,51 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
       }
     }
   }
-  
+
   func stopVideo() {
     if youtubeView.ready {
       youtubeView.stop()
       delegate?.playerDidStop()
     }
   }
-  
+
   @IBAction func actionOpenSheets(sender: UIButton) {
-    guard let unwrapedViewController = self.parentViewController else  {
-      return
-    }
-    
-    let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-    
-    let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
-    }
+    let actionSheetController =
+      UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+
+    let cancelActionButton =
+      UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+      }
     actionSheetController.addAction(cancelActionButton)
-    
-    let dubsmashActionButton: UIAlertAction = UIAlertAction(title: "Dubsmash on AppStore", style: .Default)
-    { action -> Void in
-      let url = NSURL(string: "https://itunes.apple.com/app/dubsmash/id918820076")
-      if UIApplication.sharedApplication().canOpenURL(url!) {
-        UIApplication.sharedApplication().openURL(url!)
+
+    let dubsmashActionButton =
+      UIAlertAction(title: "Dubsmash on AppStore", style: .Default) { action -> Void in
+        let url = NSURL(string: "https://itunes.apple.com/app/dubsmash/id918820076")
+        if UIApplication.sharedApplication().canOpenURL(url!) {
+          UIApplication.sharedApplication().openURL(url!)
+        }
       }
-    }
     actionSheetController.addAction(dubsmashActionButton)
-    
-    let youtubeActionButton: UIAlertAction = UIAlertAction(title: "Open in Youtube", style: .Default)
-    { action -> Void in
-      guard let id = self.feedItem!.id?.videoId else {
-        return
+
+    let youtubeActionButton =
+      UIAlertAction(title: "Open in Youtube", style: .Default) { action -> Void in
+        guard let id = self.feedItem!.id?.videoId else {
+          return
+        }
+        let url: NSURL = NSURL(string: "https://www.youtube.com/watch?v=\(id)")!
+        if UIApplication.sharedApplication().canOpenURL(url) {
+          UIApplication.sharedApplication().openURL(url)
+        }
       }
-      let url: NSURL = NSURL(string: "https://www.youtube.com/watch?v=\(id)")!
-      if UIApplication.sharedApplication().canOpenURL(url) {
-        UIApplication.sharedApplication().openURL(url)
-      }
-      
-      
-    }
     actionSheetController.addAction(youtubeActionButton)
-    
-    unwrapedViewController.presentViewController(actionSheetController, animated: true, completion: nil)
+    delegate?.openActionSheet(actionSheetController)
   }
-  
+
   override func removeFromSuperview() {
     stopVideo()
     super.removeFromSuperview()
   }
-  
+
   // these are not called:
   func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
     switch playerState {
@@ -111,10 +104,10 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
       break
     }
   }
-  
+
   func playerReady(videoPlayer: YouTubePlayerView) {
   }
-  
+
   func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
   }
 }
@@ -123,4 +116,5 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
 protocol FeedItemCellDelegate {
   func playerDidStart(cell: FeedItemCell)
   func playerDidStop()
+  func openActionSheet(actionSheet: UIAlertController)
 }

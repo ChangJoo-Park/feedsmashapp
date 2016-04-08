@@ -15,7 +15,7 @@ class FeedItem: NSObject {
   var id: FeedId?
   var snippet: FeedSnippet?
 
-  
+
   required init(data: JSON) {
     super.init()
     self.id = FeedId(data: data["id"])
@@ -23,7 +23,7 @@ class FeedItem: NSObject {
     self.kind = data["kind"].rawString()
     self.etag = data["etag"].rawString()
   }
-  
+
   func toString() -> String {
     return "\n [ \n kind: [\(kind)],\n etag: [\(etag)],\n id: [\(id?.toString())] \n snippet: [\(snippet?.toString())]"
   }
