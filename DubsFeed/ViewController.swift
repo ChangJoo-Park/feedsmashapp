@@ -11,23 +11,27 @@ import UIKit
 class ViewController: UIViewController {
   var feedController: FeedController?
   var feedItems: [FeedItem]?
-
-
+  var playStateCell: FeedItemCell?
+  
   var refreshControl: UIRefreshControl!
   var customView: UIView!
   var labelsArray: Array<UILabel> = []
   
   @IBOutlet weak var tableView: UITableView!
   
+  
+  // Play State
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     // Initialize refresh control
     refreshControl = UIRefreshControl()
     refreshControl.backgroundColor = UIColor.clearColor()
     refreshControl.tintColor = UIColor.clearColor()
-
+    
     tableView.addSubview(refreshControl)
     loadCustomRefreshContents()
     
@@ -39,15 +43,23 @@ class ViewController: UIViewController {
     let refreshContents = NSBundle.mainBundle().loadNibNamed("RefreshControl", owner: self, options: nil)
     customView = refreshContents[0] as! UIView
     customView.frame = refreshControl.bounds
+    log.info(customView.subviews[0].subviews.count)
     refreshControl.addSubview(customView)
   }
+  
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    guard let unwrappedCell = playStateCell else {
+      return
+    }
+  }
+  
   
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     if refreshControl.refreshing {
       updateFeedItems()
-      // TODO: Add Animating label
     }
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -98,9 +110,22 @@ extension ViewController: UITableViewDataSource {
     guard let unwrappedfeedItems = feedItems else {
       return cell
     }
-    
+    cell.delegate = self
     cell.feedItem = unwrappedfeedItems[indexPath.row] as FeedItem
     cell.parentViewController = self
     return cell
-  }  
+  }
+}
+
+extension ViewController: FeedItemCellDelegate {
+  func playerDidStart(cell: FeedItemCell) {
+    print("playerDidStart")
+    playStateCell?.stopVideo()
+    playStateCell = cell
+  }
+  
+  func playerDidStop() {
+    print("playerDidStop")
+    playStateCell = nil
+  }
 }
