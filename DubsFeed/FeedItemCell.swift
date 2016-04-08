@@ -93,7 +93,6 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
   }
   
   override func removeFromSuperview() {
-    log.info("CALLED")
     stopVideo()
     super.removeFromSuperview()
   }
@@ -105,6 +104,7 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
       delegate?.playerDidStart(self)
       break
     case .Ended:
+      youtubeView.stop()
       delegate?.playerDidStop()
       break
     default:

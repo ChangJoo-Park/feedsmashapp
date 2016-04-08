@@ -21,8 +21,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
     // Initialize refresh control
     refreshControl = UIRefreshControl()
     refreshControl.backgroundColor = UIColor.clearColor()
@@ -43,8 +41,6 @@ class ViewController: UIViewController {
   }
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    log.debug(customView.frame.height)
-    
     if customView.frame.height < 30 {
       customView.subviews[0].layer.opacity = 0.0
     } else {
