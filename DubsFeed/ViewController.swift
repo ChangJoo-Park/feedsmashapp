@@ -13,6 +13,7 @@ class ViewController: UIViewController {
   var feedItems: [FeedItem]?
   var playStateCell: FeedItemCell?
 
+  var isLoadingState: Bool = false
   var refreshControl: UIRefreshControl!
   var customView: UIView!
   var labelsArray: Array<UILabel> = []
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     loadCustomRefreshContents()
 
     feedController = FeedController()
-    updateFeedItems()
+    updateFeedItems(FeedUpdateType.INITIALIZE)
   }
 
   func loadCustomRefreshContents() {
@@ -43,12 +44,14 @@ class ViewController: UIViewController {
   }
 
   func scrollViewDidScroll(scrollView: UIScrollView) {
+    // Check Refresh View
     if customView.frame.height < 30 {
       customView.subviews[0].layer.opacity = 0.0
     } else {
       customView.subviews[0].layer.opacity = 1.0
     }
 
+    // Video scroll way from view
     guard let unwrappedCell = playStateCell else {
       return
     }
@@ -58,6 +61,7 @@ class ViewController: UIViewController {
     if isScrollAwayFromView {
       unwrappedCell.stopVideo()
     }
+
   }
 
   private func checkCellIsScrollAwayFromView(cell: FeedItemCell) -> Bool {
@@ -76,10 +80,23 @@ class ViewController: UIViewController {
     return false
   }
 
+
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     if refreshControl.refreshing {
-      updateFeedItems()
+      updateFeedItems(FeedUpdateType.INITIALIZE)
     }
+
+    // Load More
+    let offSetY = scrollView.contentOffset.y
+    let triggerY = scrollView.contentSize.height - tableView.frame.size.height
+    if (offSetY >= triggerY) {
+      if !isLoadingState {
+        // The offset of elements should be the amount you currently have, and you want to fetch 5 more elements
+        log.debug("Time to get more")
+        updateFeedItems(FeedUpdateType.LOADMORE)
+      }
+    }
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -87,29 +104,50 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  func updateFeedItems() {
+  func updateFeedItems(feedUpdateType: FeedUpdateType) {
     guard let feedCtrl = feedController else {
+      log.debug("is false")
       return
     }
 
+    isLoadingState = true
+    log.debug("Before request dubsmash")
     feedCtrl.requestDubsmashes { (error) in
       if error != nil {
-        log.error("Please check internet connection")
         let alertMessage = UIAlertController(
           title: "Check Connection", message: "Sorry, Please check Wifi or Cellular.",
           preferredStyle: .Alert)
         alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(alertMessage, animated: true, completion: nil)
+        self.isLoadingState = false
         return
       }
       // Load Data
       guard let items = feedCtrl.feedItems else {
         log.error("item is nil")
+        self.isLoadingState = false
         return
       }
-      self.feedItems = items
-      self.tableView.reloadData()
-      self.refreshControl.endRefreshing()
+
+      switch feedUpdateType {
+      case .INITIALIZE:
+        self.feedItems = items
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+        break
+      case .LOADMORE:
+        var indexPaths: [NSIndexPath] = []
+        for item in items {
+          self.feedItems?.append(item)
+          let count: Int = (self.feedItems?.count)!
+          indexPaths.append(NSIndexPath(forItem: count - 1, inSection: 0))
+        }
+        self.tableView.beginUpdates()
+        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
+        break
+      }
+      self.isLoadingState = false
     }
   }
 }
@@ -164,5 +202,4 @@ extension ViewController: FeedItemCellDelegate {
   func openActionSheet(actionSheet: UIAlertController) {
     self.presentViewController(actionSheet, animated: true, completion: nil)
   }
-
 }

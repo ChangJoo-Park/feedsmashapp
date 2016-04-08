@@ -14,19 +14,23 @@ import SwiftyJSON
 class FeedController: NSObject {
   private let apiKey = ""
   let query: String = "dubsmash"
-  let maxResults: Int = 30
+  let maxResults: Int = 5
   var feedItems: [FeedItem]?
+  var nextToken: String?
 
   func parseRowToItem(item: JSON) -> FeedItem {
     return FeedItem(data: item)
   }
 
   func requestDubsmashes(completionHandler: (NSError?) -> Void) {
-    log.info("START REQUEST")
     let baseUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&"
-    let searchOption = "fields=items&order=date&"
+    let searchOption = "order=date&"
     let queryString = "q=\(query)&type=video&maxResults=\(maxResults)&key=\(apiKey)"
-    let urlString = "\(baseUrl)\(searchOption)\(queryString)"
+    log.debug("Check before nextToken")
+    let nextTokenString =  nextToken == nil ? "" : "&pageToken=\(nextToken as String!)"
+    log.debug(nextTokenString)
+    let urlString = "\(baseUrl)\(searchOption)\(queryString)\(nextTokenString)"
+    log.info(urlString)
     let url = NSURL(string: urlString)
 
     Alamofire.request(.GET, url!).validate().responseJSON { response in
@@ -34,9 +38,13 @@ class FeedController: NSObject {
       case .Success:
         if let value = response.result.value {
           self.feedItems = []
-
           let items = JSON(value)["items"]
-
+          if let token: String = JSON(value)["nextPageToken"].rawString()! as String {
+            self.nextToken = token
+          } else {
+            self.nextToken = ""
+          }
+          log.debug(self.nextToken)
           for item in items.arrayValue {
             let newItem = self.parseRowToItem(item)
             self.feedItems?.append(newItem)
@@ -49,9 +57,7 @@ class FeedController: NSObject {
         completionHandler(error)
         break
       }
-
     }
-
   }
 
 }

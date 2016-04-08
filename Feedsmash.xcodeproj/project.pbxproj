@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB59B90D1CB8537600671C88 /* FeedUpdateTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB59B90C1CB8537600671C88 /* FeedUpdateTypes.swift */; };
 		ABA239D31CB69EC60079E8BE /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */; };
 		ABA239D61CB69FC60079E8BE /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */; };
 		ABA2D2691CB67084003A6AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2D2681CB67084003A6AE3 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB59B90C1CB8537600671C88 /* FeedUpdateTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUpdateTypes.swift; sourceTree = "<group>"; };
 		ABA239D21CB69EC60079E8BE /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		ABA239D51CB69FC60079E8BE /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
 		ABA2D2651CB67084003A6AE3 /* Feedsmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedsmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB59B90B1CB8536500671C88 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				AB59B90C1CB8537600671C88 /* FeedUpdateTypes.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
 		ABA239D41CB69F740079E8BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		ABA2D2671CB67084003A6AE3 /* DubsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				AB59B90B1CB8536500671C88 /* Enums */,
 				ABF950D11CB6E548006FDF09 /* UI */,
 				ABF950D01CB6E53C006FDF09 /* Controllers */,
 				ABA239D41CB69F740079E8BE /* Views */,
@@ -380,6 +391,7 @@
 				ABA239D61CB69FC60079E8BE /* FeedItemCell.swift in Sources */,
 				ABA2D2A01CB677A3003A6AE3 /* FeedId.swift in Sources */,
 				ABA2D2A41CB6783E003A6AE3 /* FeedThumbnail.swift in Sources */,
+				AB59B90D1CB8537600671C88 /* FeedUpdateTypes.swift in Sources */,
 				ABA2D26B1CB67084003A6AE3 /* ViewController.swift in Sources */,
 				ABA2D2691CB67084003A6AE3 /* AppDelegate.swift in Sources */,
 				ABA2D2971CB670AE003A6AE3 /* FeedItem.swift in Sources */,
