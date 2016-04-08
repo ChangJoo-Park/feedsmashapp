@@ -12,7 +12,7 @@ import AlamofireImage
 import SwiftyJSON
 
 class FeedController: NSObject {
-  private let API_KEY = "AIzaSyB3cRg5vQZfIvNiFBLheydDiu6hWlOUcig"
+  private let API_KEY = ""
   let query: String = "dubsmash"
   let maxResults: Int = 30
   var feedItems: [FeedItem]?
