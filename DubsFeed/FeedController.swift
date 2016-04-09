@@ -12,7 +12,7 @@ import AlamofireImage
 import SwiftyJSON
 
 class FeedController: NSObject {
-  private let apiKey = ""
+  private let apiKey = "AIzaSyB3cRg5vQZfIvNiFBLheydDiu6hWlOUcig"
   let query: String = "dubsmash"
   let maxResults: Int = 20
   var feedItems: [FeedItem]?
@@ -22,11 +22,13 @@ class FeedController: NSObject {
     return FeedItem(data: item)
   }
 
-  func requestDubsmashes(completionHandler: (NSError?) -> Void) {
+  func requestDubsmashes(updateType: FeedUpdateType, completionHandler: (NSError?) -> Void) {
     let baseUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&"
     let searchOption = "order=date&"
     let queryString = "q=\(query)&type=video&maxResults=\(maxResults)&key=\(apiKey)"
-    let nextTokenString =  nextToken == nil ? "" : "&pageToken=\(nextToken as String!)"
+
+    let nextTokenString = updateType == FeedUpdateType.INITIALIZE ?
+                                                          "" : "&pageToken=\(nextToken as String!)"
     let urlString = "\(baseUrl)\(searchOption)\(queryString)\(nextTokenString)"
     let url = NSURL(string: urlString)
 

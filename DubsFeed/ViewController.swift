@@ -109,7 +109,7 @@ class ViewController: UIViewController {
 
     isLoadingState = true
     log.debug("Before request dubsmash")
-    feedCtrl.requestDubsmashes { (error) in
+    feedCtrl.requestDubsmashes(feedUpdateType) { (error) in
       if error != nil {
         let alertMessage = UIAlertController(
           title: "Check Connection", message: "Sorry, Please check Wifi or Cellular.",
