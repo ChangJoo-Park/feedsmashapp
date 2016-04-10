@@ -19,28 +19,31 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
   @IBOutlet weak var thumbnailImageView: UIImageView!
   @IBOutlet weak var mediaView: YouTubePlayerView!
 
-  var tapThumbnailGesture: UITapGestureRecognizer?
   var delegate: FeedItemCellDelegate?
 
   var isPlayState: Bool = false {
     didSet {
-      UIView.animateWithDuration(0.3) {
-        self.thumbnailImageView.layer.opacity = self.isPlayState ? 0.0 : 1.0
-        self.mediaView.layer.opacity = self.isPlayState ? 1.0 : 0.0
+      if isPlayState {
+        UIView.animateWithDuration(0.2) {
+          self.thumbnailImageView.layer.opacity = 0.0
+          self.mediaView.layer.opacity = 1.0
+        }
+      } else {
+        self.thumbnailImageView.layer.opacity = 1.0
+        self.mediaView.layer.opacity = 0.0
       }
     }
   }
   var feedItem: FeedItem? {
     didSet {
+      isPlayState = false
       desc.text = feedItem?.snippet?.desc
       videoTitle.text = feedItem?.snippet?.title
       Alamofire.request(Method.GET, (feedItem?.snippet?.thumbnails?.last?.url)!)
         .responseImage { (response) in
           if let image = response.result.value {
             self.thumbnailImageView.image = image
-            self.thumbnailImageView.userInteractionEnabled = true
-            self.tapThumbnailGesture = UITapGestureRecognizer(target: self, action: #selector(FeedItemCell.loadVideo))
-            self.thumbnailImageView.addGestureRecognizer(self.tapThumbnailGesture!)
+            self.loadVideo()
           }
       }
     }
@@ -59,9 +62,9 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
 
   func loadVideo() {
     guard let videoId = feedItem?.id?.videoId else {
+      log.info("video is nil")
       return
     }
-
     mediaView.loadVideoID(videoId)
   }
 
@@ -136,7 +139,8 @@ class FeedItemCell: UITableViewCell, YouTubePlayerDelegate {
   }
 
   func playerReady(videoPlayer: YouTubePlayerView) {
-    playVideo()
+    log.debug("Player is Ready \(self.feedItem?.snippet?.title)")
+    isPlayState = true
   }
 
   func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
