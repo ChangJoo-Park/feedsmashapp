@@ -69,12 +69,12 @@ class ViewController: UIViewController {
     let cellRectInTable = tableView.rectForRowAtIndexPath(indexPath!)
     let cellInSuperview = tableView.convertRect(cellRectInTable, toView: tableView.superview)
     let cellPositionY = cellInSuperview.origin.y
-
+    let cellRemainBoundary = cellRectInTable.height / 4
     // swipe up (View will down, y less than 0)
-    if cellPositionY < -100 {
+    if cellPositionY < -cellRemainBoundary {
       return true
       // swipe down (View will up, y less than 0)
-    } else if cellPositionY - cellInSuperview.height > 100 {
+    } else if cellPositionY - cellInSuperview.height > cellRemainBoundary {
       return true
     }
     return false
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
 
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     if refreshControl.refreshing {
-      updateFeedItems(FeedUpdateType.INITIALIZE)
+      updateFeedItems(.INITIALIZE)
     }
 
     // Load More
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     let triggerY = scrollView.contentSize.height - tableView.frame.size.height
     if (offSetY >= triggerY) {
       if !isLoadingState {
-        updateFeedItems(FeedUpdateType.LOADMORE)
+        updateFeedItems(.LOADMORE)
       }
     }
 

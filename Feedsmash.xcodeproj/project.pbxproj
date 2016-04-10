@@ -126,9 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				ABF950CF1CB6E51E006FDF09 /* Library */,
-				ABA2D2671CB67084003A6AE3 /* DubsFeed */,
-				ABA2D27C1CB67085003A6AE3 /* DubsFeedTests */,
-				ABA2D2871CB67085003A6AE3 /* DubsFeedUITests */,
+				ABA2D2671CB67084003A6AE3 /* Feedsmash */,
+				ABA2D27C1CB67085003A6AE3 /* FeedsmashTests */,
+				ABA2D2871CB67085003A6AE3 /* FeedsmashUITests */,
 				ABA2D2661CB67084003A6AE3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ABA2D2671CB67084003A6AE3 /* DubsFeed */ = {
+		ABA2D2671CB67084003A6AE3 /* Feedsmash */ = {
 			isa = PBXGroup;
 			children = (
 				AB59B90B1CB8536500671C88 /* Enums */,
@@ -155,24 +155,27 @@
 				ABA2D26F1CB67084003A6AE3 /* Assets.xcassets */,
 				ABA2D2741CB67084003A6AE3 /* Info.plist */,
 			);
+			name = Feedsmash;
 			path = DubsFeed;
 			sourceTree = "<group>";
 		};
-		ABA2D27C1CB67085003A6AE3 /* DubsFeedTests */ = {
+		ABA2D27C1CB67085003A6AE3 /* FeedsmashTests */ = {
 			isa = PBXGroup;
 			children = (
 				ABA2D27F1CB67085003A6AE3 /* Info.plist */,
 				ABA2D2981CB670C6003A6AE3 /* FeedItemTests.swift */,
 			);
+			name = FeedsmashTests;
 			path = DubsFeedTests;
 			sourceTree = "<group>";
 		};
-		ABA2D2871CB67085003A6AE3 /* DubsFeedUITests */ = {
+		ABA2D2871CB67085003A6AE3 /* FeedsmashUITests */ = {
 			isa = PBXGroup;
 			children = (
 				ABA2D2881CB67085003A6AE3 /* DubsFeedUITests.swift */,
 				ABA2D28A1CB67085003A6AE3 /* Info.plist */,
 			);
+			name = FeedsmashUITests;
 			path = DubsFeedUITests;
 			sourceTree = "<group>";
 		};

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,10 +35,10 @@
                                                     <rect key="frame" x="8" y="8" width="359" height="484"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="wRA-xT-7ff">
-                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pl-M0-H4S">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -47,29 +46,37 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-nW-WfS">
-                                                            <rect key="frame" x="0.0" y="10" width="359" height="414"/>
+                                                            <rect key="frame" x="0.0" y="34" width="359" height="371"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASq-hf-7NS" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="414"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.73333333329999995" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZ6-G2-Ls5">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="371"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhn-3J-2qT">
+                                                                            <rect key="frame" x="60" y="0.0" width="119" height="128"/>
+                                                                        </imageView>
+                                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCl-Kz-vaf" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                                                            <rect key="frame" x="59" y="122" width="240" height="128"/>
+                                                                        </view>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="ASq-hf-7NS" secondAttribute="height" multiplier="16:9" id="7iC-tN-T36"/>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="xur-2N-VW6"/>
+                                                                        <constraint firstItem="dhn-3J-2qT" firstAttribute="width" secondItem="tZ6-G2-Ls5" secondAttribute="width" id="IVF-dD-GLY"/>
+                                                                        <constraint firstItem="dhn-3J-2qT" firstAttribute="centerX" secondItem="tZ6-G2-Ls5" secondAttribute="centerX" id="T5f-mv-pkp"/>
+                                                                        <constraint firstItem="eCl-Kz-vaf" firstAttribute="centerY" secondItem="tZ6-G2-Ls5" secondAttribute="centerY" id="XdA-oV-k8u"/>
+                                                                        <constraint firstItem="eCl-Kz-vaf" firstAttribute="width" secondItem="tZ6-G2-Ls5" secondAttribute="width" id="cVD-5c-eSx"/>
+                                                                        <constraint firstItem="eCl-Kz-vaf" firstAttribute="height" secondItem="tZ6-G2-Ls5" secondAttribute="height" id="gcr-qn-bVL"/>
+                                                                        <constraint firstItem="dhn-3J-2qT" firstAttribute="centerY" secondItem="tZ6-G2-Ls5" secondAttribute="centerY" id="iFt-zo-LQb"/>
+                                                                        <constraint firstItem="eCl-Kz-vaf" firstAttribute="centerX" secondItem="tZ6-G2-Ls5" secondAttribute="centerX" id="jgQ-k4-gki"/>
+                                                                        <constraint firstItem="dhn-3J-2qT" firstAttribute="height" secondItem="tZ6-G2-Ls5" secondAttribute="height" id="rKV-6Y-O2n"/>
                                                                     </constraints>
-                                                                    <variation key="default">
-                                                                        <mask key="constraints">
-                                                                            <exclude reference="7iC-tN-T36"/>
-                                                                            <exclude reference="xur-2N-VW6"/>
-                                                                        </mask>
-                                                                    </variation>
                                                                 </view>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSl-qK-wcR">
-                                                            <rect key="frame" x="0.0" y="434" width="359" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="415" width="359" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-ss-4Vn">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -112,9 +119,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="desc" destination="CZQ-ss-4Vn" id="QBs-Na-ei5"/>
+                                            <outlet property="mediaView" destination="eCl-Kz-vaf" id="3xC-p8-baa"/>
                                             <outlet property="moreButton" destination="KUu-3D-Z0q" id="ljM-Zp-EDB"/>
+                                            <outlet property="thumbnailImageView" destination="dhn-3J-2qT" id="w5X-mq-qIM"/>
                                             <outlet property="videoTitle" destination="2pl-M0-H4S" id="KBz-G7-FBo"/>
-                                            <outlet property="youtubeView" destination="ASq-hf-7NS" id="tgv-AL-WOj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
